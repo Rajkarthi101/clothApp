@@ -1,0 +1,50 @@
+
+
+<div class="form" align="center">
+    <br>
+    <p *appCheck=registerLink>Kindly Please  <a href="registeration">Register</a></p>
+     <div  class="loginDesign">
+       
+        <div class="form1" align="center" >
+            <br>
+            <h3> LOGIN</h3>
+            <form class="example-form"  [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+        
+            <br>
+                <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" value="" formControlName="userEmail" (click)="register()">
+                    <mat-error style="color:red;" *ngIf="f['userEmail'].touched && f['userEmail'].errors && f['userEmail'].errors['required']">
+                        Email is required
+                    </mat-error>
+                    <mat-error style="color:red;" *ngIf="f['userEmail'].errors && f['userEmail'].errors['pattern'] ">
+                        Email is invalid
+                    </mat-error>
+                </mat-form-field>
+            <br>
+        
+            <br>
+                <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password" value="" formControlName="userPassword"  maxlength="15">
+                <mat-error style="color:red;" *ngIf="f['userPassword'].touched && f['userPassword'].errors && f['userPassword'].errors['required']">
+                    Password is required
+                </mat-error>
+                <mat-error style="color:red;" *ngIf="f['userPassword'].errors && f['userPassword'].errors['pattern'] ">
+                    Email is invalid
+                </mat-error>
+            
+                </mat-form-field>
+            <br>
+
+                <button mat-raised-button type="submit" [disabled]="!loginForm.valid"  ><span>LOGIN IN</span></button><br>
+               
+            </form>
+            <div class="forgotpassword" align="center">               
+                <a href=""> Forgot Password ? click Here</a>
+            </div>
+            <br>  <br>
+    </div>
+    <br> <br ><br>{{this.loginData}} <br>  <br>
+</div>
+

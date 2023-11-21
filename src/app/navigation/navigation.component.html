@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a  (click)="drawer.toggle()" id="toggle" *appCheck=contentshow><mat-icon >menu</mat-icon></a>
+            <a routerLink="">Home</a>
+            <a routerLink="about">About</a>
+            <a routerLink="setting" *appCheck=contentshow>Settings</a>
+            <a routerLink="myProfile" *appCheck=contentshow>My Profile</a>
+            <a routerLink="store">Store</a>
+            <a routerLink="categories" *appCheck=contentshow>Categories</a>
+            <a routerLink="login">Login</a>
+            <a routerLink="registeration">Registeration</a>
+        </div>
+   </nav>
+</mat-toolbar>
+
+
+<mat-drawer-container autosize >
+  <mat-drawer #drawer opened="false" mode="push"  style="width: 10%;">
+    <mat-nav-list>
+      <mat-list-item><br><br>
+        <a routerLink=""> <mat-icon>dashboard</mat-icon>Dashboard</a><br><br><br>
+
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="">  <mat-icon>home</mat-icon>Home</a><br><br><br>
+
+      </mat-list-item>
+
+      <mat-list-item>
+        <a routerLink="">   <mat-icon>help</mat-icon>Help</a><br><br><br>
+
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <router-outlet>
+      
+    </router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+    
+
+

@@ -1,0 +1,76 @@
+
+<div class="form" align="center">
+   <br>  <br>
+    <div class="form1" align="center" >
+      <p>REGISTERATION</p>
+        <form class="example-form"  [formGroup]="registrationForm" (ngSubmit)="handleSubmit()">
+       
+            <mat-form-field class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="name" value="" formControlName="name"  >              
+               <mat-error style="color:red;" *ngIf="f['name'].touched && f['name'].errors && f['name'].errors['required']">
+                 Name is required
+                </mat-error>
+            </mat-form-field>
+         <br>
+    
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="email" value="" formControlName="email" >
+                <mat-error style="color:red;" *ngIf="f['email'].touched && f['email'].errors && f['email'].errors['required']">
+                    Email is required
+                </mat-error>
+                <mat-error style="color:red;" *ngIf="f['email'].errors && f['email'].errors['pattern'] ">
+                    Email is invalid
+                </mat-error>
+            </mat-form-field>
+         <br>
+      
+    
+            <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" value="" formControlName="password"  maxlength="15">
+            <mat-error style="color:red;" *ngIf="f['password'].touched && f['password'].errors && f['password'].errors['required']">
+                Password is required
+            </mat-error>
+         
+            <mat-error style="color:red;" *ngIf="f['password'].errors && f['password'].errors['pattern'] ">
+              Weak Password
+            </mat-error>
+            </mat-form-field>
+        <br>
+
+        
+            <mat-form-field class="example-full-width">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="phone Number" formControlName="phoneNumber" >
+              <mat-error style="color:red;" *ngIf="f['phoneNumber'].touched && f['phoneNumber'].errors && f['phoneNumber'].errors['required']">
+                phone Number is required
+              </mat-error>
+              <mat-error style="color:red;" *ngIf=" f['phoneNumber'].errors && f['phoneNumber'].errors['pattern']">
+                phone Number invalid
+              </mat-error>
+            </mat-form-field>
+         <br>
+
+         <mat-form-field class="example-full-width">
+            <mat-label>Country</mat-label>
+            <mat-select  formControlName="country">
+              <mat-option *ngFor="let country of countrys" value="country.value" [value]="country.value" >
+                {{country.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error style="color:red;" *ngIf="f['country'].touched && f['country'].errors && f['country'].errors['required']">
+                County is required
+              </mat-error>
+          </mat-form-field>
+          <br>
+            <button mat-raised-button type="submit" [disabled]="!registrationForm.valid" id="submitButton" ><span style="color:black;font-family: 'Times New Roman'">Register</span></button><br>
+      
+          </form>
+    </div>
+    <div>
+      <br>  <br>
+    </div>
+    </div>
+

@@ -1,0 +1,21 @@
+.homeScreen{
+    padding: 0;
+    margin: 0;
+}
+
+ .homeScreen1{
+    /* background-image: url('../../assets/cloth9.jpg'); */
+    background-image: url('../../assets/cloth11.jpg');
+
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-size: contain;
+    background-position: center;
+ }
+
+ .container{
+    color: white;
+ }
+ 
